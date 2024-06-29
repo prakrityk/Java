@@ -4,18 +4,18 @@ public class StudentInfo {
 
     // Database URL, username, and password
     static final String DB_URL = "jdbc:mysql://localhost:3306/College";
-    static final String USER = "root";  // replace with your database username
-    static final String PASS = "";      // replace with your database password
+    static final String USER = "root";  
+    static final String PASS = "";      
 
     public static void main(String[] args) {
         try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS)) {
             if (conn != null) {
                 System.out.println("Connected to the database!");
 
-                // Insert a record into the Student table
+                // inserting a record into the Student table
                 insertStudent(conn);
 
-                // Update the program from BCIS to BBA for the inserted record
+                // updating the program from BCIS to BBA for the inserted record
                 updateStudentProgram(conn);
             }
         } catch (SQLException e) {
