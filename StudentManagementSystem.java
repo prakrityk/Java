@@ -6,20 +6,20 @@ import java.awt.event.ActionListener;
 public class StudentManagementSystem {
 
     public static void main(String[] args) {
-        // Create the main frame
+       
         JFrame frame = new JFrame("Student Management System");
-        // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      
         frame.setSize(400, 300);
 
-        // Create a tabbed pane
+        // creating a tabbed pane
         JTabbedPane tabbedPane = new JTabbedPane();
 
-        // Create panels for each tab
+        // creating panels for each tab
         JPanel studentInfoPanel = new JPanel();
         JPanel coursesPanel = new JPanel();
         JPanel gradesPanel = new JPanel();
 
-        // --- Student Information Tab ---
+        // Student Information Tab (Tab 1)
         studentInfoPanel.setLayout(new GridLayout(3, 2));
 
         JLabel nameLabel = new JLabel("Name:");
@@ -44,7 +44,7 @@ public class StudentManagementSystem {
         studentInfoPanel.add(new JLabel()); // Empty cell
         studentInfoPanel.add(saveButton);
 
-        // --- Courses Tab ---
+        //Courses (tab 2)
         coursesPanel.setLayout(new BorderLayout());
 
         JLabel courseListLabel = new JLabel("Course List", JLabel.CENTER);
@@ -54,14 +54,12 @@ public class StudentManagementSystem {
         coursesPanel.add(courseListLabel, BorderLayout.NORTH);
         coursesPanel.add(new JScrollPane(courseList), BorderLayout.CENTER);
 
-        // --- Grades Tab ---
+        // Grades Tab(tab 3)
         gradesPanel.setLayout(new BorderLayout());
 
         JLabel enterGradesLabel = new JLabel("Enter Grades", JLabel.CENTER);
         JTextArea gradesArea = new JTextArea(10, 30);
-        // gradesArea.setLineWrap(true);
-        // gradesArea.setWrapStyleWord(true);
-
+       
         JButton submitButton = new JButton("Submit");
         submitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -74,15 +72,15 @@ public class StudentManagementSystem {
         gradesPanel.add(new JScrollPane(gradesArea), BorderLayout.CENTER);
         gradesPanel.add(submitButton, BorderLayout.SOUTH);
 
-        // Add panels to the tabbed pane
+        //adding panels to the respective tabbed panes
         tabbedPane.addTab("Student Information", studentInfoPanel);
         tabbedPane.addTab("Courses", coursesPanel);
         tabbedPane.addTab("Grades", gradesPanel);
 
-        // Add the tabbed pane to the frame
+        //adding the tabbed pane to the frame
         frame.add(tabbedPane);
 
-        // Set the frame to be visible
+      //frame should be set as visible
         frame.setVisible(true);
     }
 }
